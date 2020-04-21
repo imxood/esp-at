@@ -15,7 +15,7 @@ on:
 
 env:
   # TODO: Change variable to your image's name.
-  IMAGE_NAME: imxood/esp-at
+  IMAGE_NAME: esp-at
 
 jobs:
   # Run tests.
