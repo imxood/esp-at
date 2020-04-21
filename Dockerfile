@@ -53,12 +53,10 @@ RUN $IDF_PATH/tools/idf_tools.py --non-interactive install required \
     && rm -rf $IDF_TOOLS_PATH/dist
 
 
-# Ccache is installed, enable it by default
-ENV IDF_CCACHE_ENABLE=1
+RUN echo ". ${IDF_PATH}/export.sh" >> /etc/bash.bashrc
+
 
 RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
-
-RUN source $IDF_PATH/export.sh && env | grep _ >> /etc/environment
 
 RUN /etc/init.d/ssh start
 
